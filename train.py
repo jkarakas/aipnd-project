@@ -89,7 +89,13 @@ def get_input_args():
                         default=None,
                         type=str,
                         help='define custom\
-                                     hidden-layers(use comma separated values)')
+                                hidden layers (use comma separated values)' +
+                        """default layers:  {
+                                    'densenet121': '500',
+                                    'densenet161': '1000, 500',
+                                    'vgg16': '4096, 4096, 1000',
+                                    'vgg19': '4096, 4096, 1000'
+                                    }""")
 
     return parser.parse_args()
 

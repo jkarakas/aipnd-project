@@ -9,7 +9,7 @@ Project code for Udacity's AI Programming with Python Nanodegree program. In thi
 
 Trains a classifier on a dataset of images using a pretrained network and saves the model to a checkpoint.
 
-SPECS:
+**SPECS:**
 - The training loss, validation loss, and validation accuracy are printed out as
  a network trains.
 - Allows users to choose from **four** different architectures available from
@@ -31,25 +31,31 @@ usage: train.py [-h] [--arch {vgg16,vgg19,densenet121,densenet161}] [--gpu]
                 [-e EPOCHS] [-b BATCH] [-lr LR] [-hl HIDDEN_LAYERS]
                 DIR
 
-
 positional arguments:
   DIR                   path to dataset
 
 optional arguments:
   -h, --help            show this help message and exit
   --arch {vgg16,vgg19,densenet121,densenet161}
-                        choose model architecture: vgg16 | vgg19 | densenet121
-                        | densenet161 (default: densenet121)
+                        choose model architecture:
+                        vgg16 | vgg19 | densenet121 | densenet161
+                        (default: densenet121)
   --gpu                 train model on gpu
   -e EPOCHS, --epochs EPOCHS
                         number of total epochs to run (default: 2)
   -b BATCH, --batch-size BATCH
                         mini-batch size (default: 64)
   -lr LR, --learning-rate LR
-                        learning rate (default: 0.001)
-  -hl HIDDEN_LAYERS, --hidden-layers HIDDEN_LAYERS
-                        define custom hidden-layers(use comma separated
-                        values) 
+                        learning rate (default: 0.001)  
+  -hl HIDDEN_LAYERS, --hidden-layers HIDDEN_LAYERS  
+                        define custom hidden layers (use comma separated  
+                        values)   
+                        default layers: {  
+                        'densenet121': '500',  
+                        'densenet161': '1000, 500',  
+                        'vgg16': '4096, 4096, 1000',  
+                        'vgg19': '4096, 4096, 1000'  
+                         }
   ```
 
 ## Predicting
@@ -58,7 +64,7 @@ Loads a saved pytorch model checkpoint and an image and prints the most likely
 image class and it's associated probability. If provided, uses a category to
 name json file to map categories to names and print the names as well.
 
-SPECS:
+**SPECS:**
 - Allows users to print out the top K classes along with associated
  probabilities.
 - Allows users to use the GPU to calculate the predictions.
